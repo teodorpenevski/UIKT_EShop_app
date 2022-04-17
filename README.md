@@ -2,7 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-REQUIRED FOR REACT: Node.JS
+REQUIRED FOR REACT: **Node.JS**
+
 Optionally you can use Yarn instead of NPM, install it with: **npm install -g yarn**
 then use: **yarn install** for dependencies installation and **yarn start** to start the development server.
 
