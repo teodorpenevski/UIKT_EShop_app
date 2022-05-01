@@ -1,0 +1,21 @@
+.filterContainer {
+  background-color: #ffb450;
+  margin-left: 35%;
+  margin-right: 35%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  font-size: 15px;
+  border: 2px solid #ffb450;
+  border-radius: 3px;
+}
+.filterText,
+.priceFilter,
+.searchFilter,
+.productFilter {
+  margin-left: 40px;
+  margin-top: 10px;
+}
+.filterText {
+  font-weight: bold;
+  font-size: 17px;
+}
