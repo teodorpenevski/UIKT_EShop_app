@@ -32,7 +32,7 @@ const MonitorAdd = (props) => {
         const category = formData.category;
 
         props.onAddMonitor(name, price, back_light_type,color, power_in_kw, resolution, category);
-        history.push( "/products");
+        history.push( "/home");
     }
 
     return(

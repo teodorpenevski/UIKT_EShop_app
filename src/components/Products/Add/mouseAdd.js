@@ -38,7 +38,7 @@ const MouseAdd = (props) => {
         const category = formData.category;
 
         props.onAddMouse(name, price, cable_length, cable_type, dpiresolution, is_gaming, category);
-        history.push( "/products");
+        history.push( "/home");
     }
 
     return(

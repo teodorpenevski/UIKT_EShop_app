@@ -39,7 +39,7 @@ const KeyboardAdd = (props) => {
 
         props.onAddKeyboard(name, price, spill_resistant, is_gaming, cable_length_in_cm,
             number_of_keys, category);
-        history.push( "/products");
+        history.push( "/home");
     }
 
     return(

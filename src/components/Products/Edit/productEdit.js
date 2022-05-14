@@ -22,7 +22,7 @@ const ProductEdit = (props) => {
         const price = formData.price !== 0.0 ? formData.price : props.product.price;
 
         props.onEditProduct(props.product.id,price);
-        history.push("/products");
+        history.push("/home");
     }
 
 

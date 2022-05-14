@@ -1,4 +1,4 @@
-.price {
+.search {
   width: fit-content;
 }
 
@@ -6,11 +6,11 @@
   color: black;
   background-color: white;
   margin: 10px;
+  width: 125px;
 }
 
-.price input {
-  width: 50px;
+.search input {
+  width: 200px;
   height: 25px;
   font-size: 12px;
 }
-

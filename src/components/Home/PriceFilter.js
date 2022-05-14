@@ -1,6 +1,5 @@
 import React from "react";
 import classes from "./Filter.module.css";
-import Slider from "@material-ui/core/Slider";
 
 const PriceFilter = () => {
   // Our States

@@ -9,35 +9,20 @@ const ProductList = (props) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    axios.get("https://fakestoreapi.com/products").then((res) => {
-      const products = res.data;
-      setProducts(products);
-      setIsLoaded(true);
-    });
-  }, []);
-  let filteredData;
-  if (!props.selectedCategory || props.selectedCategory === "default") {
-    filteredData = products;
-  } else {
-    filteredData = products.filter(
-      (product) => product.category === props.selectedCategory
-    );
-  }
+    setProducts(props.products);
+    setIsLoaded(true);
+  }, [props.products]);
 
   return (
     <div>
       {isLoaded === true
-        ? filteredData.map((product) => (
+        ? products.map((product) => (
             <div key={product.id} className={classes.container}>
-              <div className={classes.imgDiv}>
-                <img className={classes.image} src={product.image} />
-              </div>
-              <div className={classes.productName}>{product.title}</div>
+              <div className={classes.productName}>{product.name}</div>
               <div className={classes.price}>
                 <div className={classes.iconsCart}>
-                  <IoWalletSharp />
+                  <IoWalletSharp /> ${product.price}
                 </div>
-                <div>${product.price}</div>
               </div>
               <div className={classes.details}>
                 <button className={classes.button1}>Details!</button>

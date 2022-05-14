@@ -39,7 +39,7 @@ const LaptopAdd = (props) => {
 
         props.onAddLaptop(name, price, cpu,ram,storage, gpu, weight_in_kg, operating_system,
             dimensions, category);
-        history.push( "/products");
+        history.push( "/home");
     }
 
     return(

@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "../../custom-axios/axios";
 import React, { useEffect, useState } from "react";
 import classes from "./Filter.module.css";
 
@@ -6,7 +6,7 @@ const CategoryFilter = (props) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [categories, setCategories] = useState([]);
   useEffect(() => {
-    axios.get("https://fakestoreapi.com/products/categories").then((res) => {
+    axios.get("/categories").then((res) => {
       const resCategories = res.data;
       setCategories(resCategories);
       setIsLoaded(true);
@@ -17,7 +17,7 @@ const CategoryFilter = (props) => {
   };
 
   return (
-    <div className={classes.productFilter}>
+    <div className={classes.catgoryFilter}>
       Product category:
       <select
         onChange={handleCategoryChange}
@@ -26,14 +26,14 @@ const CategoryFilter = (props) => {
         className={classes.dropdown}
       >
         {isLoaded === false ? (
-          <option value="default">Loading...</option>
+          <option value="all">Loading...</option>
         ) : (
           <>
-            <option value="default">Select</option>
+            <option value="all">All</option>
 
             {categories.map((category) => (
-              <option key={category} value={category}>
-                {category}
+              <option key={category.id} value={category.name}>
+                {category.name}
               </option>
             ))}
           </>

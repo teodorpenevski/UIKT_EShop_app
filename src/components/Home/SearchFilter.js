@@ -1,10 +1,15 @@
 import React from "react";
 import classes from "./Filter.module.css";
 
-const SearchFilter = () => {
+const SearchFilter = (props) => {
   return (
-    <div>
-      <div></div>
+    <div className={classes.search}>
+      Search:{" "}
+      <input
+        type="text"
+        name="name"
+        onChange={(e) => props.searchHandler(e.target.value.toLowerCase())}
+      />
     </div>
   );
 };
