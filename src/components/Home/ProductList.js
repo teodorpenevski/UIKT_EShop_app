@@ -4,6 +4,7 @@ import { IoWalletSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+
 const ProductList = (props) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [products, setProducts] = useState([]);
@@ -29,6 +30,13 @@ const ProductList = (props) => {
               </div>
               <div className={classes.cart}>
                 <button className={classes.button2}>Add to cart!</button>
+              </div>
+              <div>
+                <Link className={"btn btn-secondary ml-2"}
+                      onClick={() => props.onEdit(product.id)}
+                      to={"/products/edit/" + product.id}>
+                  Edit
+                </Link>
               </div>
             </div>
           ))
