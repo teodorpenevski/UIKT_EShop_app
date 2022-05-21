@@ -12,6 +12,7 @@ import KeyboardAdd from "../Products/Add/keyboardAdd";
 import Footer from "../SiteStructure/Footer/Footer.js";
 import ProductEdit from "../Products/Edit/productEdit";
 import Home from "../Home/Home";
+import Details from "../Products/Details/Details";
 
 class App extends Component {
   constructor(props) {
@@ -89,6 +90,13 @@ class App extends Component {
                 onEdit={this.getProduct}
               />
             )}
+          />
+          <Route
+              exact
+              path="/products/details/:id"
+              render={() => (
+                  <Details />
+              )}
           />
           <Route
             exact
