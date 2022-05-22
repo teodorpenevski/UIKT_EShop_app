@@ -13,6 +13,7 @@ import Footer from "../SiteStructure/Footer/Footer.js";
 import ProductEdit from "../Products/Edit/productEdit";
 import Home from "../Home/Home";
 import Details from "../Products/Details/Details";
+import ShoppingCart from "../ShoppingCart/ShoppingCart";
 
 class App extends Component {
   constructor(props) {
@@ -96,6 +97,13 @@ class App extends Component {
               path="/products/details/:id"
               render={() => (
                   <Details />
+              )}
+          />
+          <Route
+              exact
+              path="/shoppingCart/:id"
+              render={() => (
+                  <ShoppingCart/>
               )}
           />
           <Route

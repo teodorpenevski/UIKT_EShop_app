@@ -65,6 +65,12 @@ const EShopService = {
         return axios.put(`/products/edit/${id}`, {
             "price": price
         });
+    },
+    fetchShoppingCart: (id) => {
+        return axios.get(`/shoppingCart/${id}`)
+    },
+    deleteShoppingCartItem: (id) => {
+        return axios.delete(`/shoppingCart/delete/${id}`)
     }
 }
 
