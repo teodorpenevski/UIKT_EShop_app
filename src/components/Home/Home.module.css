@@ -1,0 +1,46 @@
+.filterContainer {
+  background-color: #ffb450;
+  font-size: 15px;
+  border: 2px solid #ffb450;
+  border-radius: 3px;
+  margin: 50px;
+  padding-right: 20px;
+  /* width: 300px; */
+}
+.filterText,
+.priceFilter,
+.searchFilter,
+.categoryFilter {
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 10px;
+}
+.filterText {
+  font-weight: bold;
+  font-size: 17px;
+}
+.firstRow {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  margin: auto;
+}
+.addProductsBtn {
+  margin: 85px;
+  padding: 10px 20px 10px 20px;
+  text-align: center;
+  font-size: 17px;
+  transition-duration: 0.3s;
+  background-color: #027c81;
+  color: white;
+  border: 2px solid #027c81;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+
+.addProductsBtn:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid #027c81;
+  border-radius: 3px;
+}
