@@ -6,7 +6,8 @@ import EShopService from "../../repository/EShopRepository";
 
 const ShoppingCart = (props) => {
 
-    const id = useParams();
+
+    const { id } = useParams();
 
     const [shoppingCart, setShoppingCart] = useState({
         id : 1,
