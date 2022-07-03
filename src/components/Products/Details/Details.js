@@ -1,61 +1,30 @@
-import {useParams} from "react-router-dom";
-import {useEffect, useState} from "react";
-import EShopService from "../../../repository/EShopRepository";
+import { Link } from "react-router-dom";
 
 const Details =(props)=>{
-    const id = useParams();
-    const [product, setProduct] = useState({
-        id : undefined,
-        name : undefined,
-        price : undefined,
-        category: {
-            id : undefined,
-            name : undefined,
-            description: undefined,
-        }
-    });
-    useEffect(()=>{
-        EShopService.getProduct(id).then((data)=>{
-            setProduct(data.data)
-        })
-    }, [id]);
 
     return (
-        <>
-            <h1 className='justify-content-center text-center'>
-                Product details
-            </h1>
-            <div className='row d-flex justify-content-center'>
-                <div className='col-8'>
-                    <div className='row'>
-                        <div className='col-6 text-right'>
-                            PRODUCT NAME
+        <div className="app">
+            {
+                <div className="details" key={props.product.id}>
+
+                    <div className="box">
+                        <div className="row">
+                            <h2> Product name: {props.product.name} </h2>
                         </div>
-                        <div className='col-6'>
-                            {product.name}
-                        </div>
-                    </div>
-                    <div className='row'>
-                        <div className='col-6 text-right'>
-                            PRODUCT PRICE
-                        </div>
-                        <div className='col-6'>
-                            {product.price}
-                        </div>
-                    </div>
-                    <div className='row'>
-                        <div className='col-6 text-right'>
-                            PRODUCT CATEGORY
-                        </div>
-                        <div className='col-6'>
-                            {product.category.name}
-                        </div>
+                        <h2>Product price: ${props.product.price}</h2>
+                        <h2>Product category:
+                            {props.categories.map((item) => {
+                                if(props.product.category !== undefined
+                               && item.id === props.product.category.id)
+                             return item.name
+                            })}
+                        </h2>
+                        <Link className={"btn m-2 btn-primary"} to={"/shoppingcart"}>Add to cart</Link>
                     </div>
                 </div>
-
-            </div>
-        </>
-
-    );
+            }
+        </div>
+    )
 }
-export default Details
+
+export default Details;

@@ -93,9 +93,11 @@ class App extends Component {
           />
           <Route
               exact
-              path="/products/details/:id"
+              path="/products/:id"
               render={() => (
-                  <Details />
+                  <Details
+                      categories={this.state.categories}
+                      product={this.state.selectedProduct}/>
               )}
           />
           <Route
@@ -109,7 +111,9 @@ class App extends Component {
             exact
             path="/home"
             render={() => <Home products={this.state.products}
-                                onEdit={this.getProduct}/>}
+                                onEdit={this.getProduct}
+                                onDetails={this.getProduct}
+            />}
           />
           <Route exact path="/">
             <Redirect to="/home" />

@@ -62,7 +62,7 @@ const Home = (props) => {
         </div>
       </div>
       <div className={classes.listContainer}>
-        <ProductList products={filterData} onEdit={props.onEdit}/>
+        <ProductList products={filterData} onEdit={props.onEdit} onDetails={props.onDetails}/>
       </div>
     </div>
   );

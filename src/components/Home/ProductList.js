@@ -25,9 +25,14 @@ const ProductList = (props) => {
                   <IoWalletSharp /> ${product.price}
                 </div>
               </div>
-              <div className={classes.details}>
-                <button className={classes.button1}>Details!</button>
-              </div>
+              {/*<div className={classes.details}>*/}
+              {/*  <button className={classes.button1}>Details!</button>*/}
+              {/*</div>*/}
+              <Link className={"btn btn-info ml-2"}
+                    onClick={() => props.onDetails(product.id)}
+                    to={"/products/" + product.id}>
+                Details
+              </Link>
               <div className={classes.cart}>
                 <button className={classes.button2}>Add to cart!</button>
               </div>
