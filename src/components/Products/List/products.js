@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import ProductTerm from '../List/ProductTerm';
 
 const products = (props) => {
 
@@ -19,26 +18,6 @@ const products = (props) => {
                                     keyboard</Link>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div className={"row"}>
-                    <div className={"table-responsive"}>
-                        <table className={"table table-striped"}>
-                            <thead>
-                            <tr>
-                                <th scope={"col"}>Name</th>
-                                <th scope={"col"}>Price</th>
-                                <th scope={"col"}>Edit</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            {props.products.map((term) => {
-                                return (
-                                   <ProductTerm term={term} onEdit={props.onEdit} />
-                                );
-                            })}
-                            </tbody>
-                        </table>
                     </div>
                 </div>
             </div>
