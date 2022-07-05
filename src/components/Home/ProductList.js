@@ -3,6 +3,7 @@ import classes from "./ProductList.module.css";
 import { IoWalletSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import EShopRepository from "../../repository/EShopRepository";
 
 
 const ProductList = (props) => {
@@ -13,6 +14,7 @@ const ProductList = (props) => {
     setProducts(props.products);
     setIsLoaded(true);
   }, [props.products]);
+
 
   return (
     <div>
@@ -28,16 +30,18 @@ const ProductList = (props) => {
               {/*<div className={classes.details}>*/}
               {/*  <button className={classes.button1}>Details!</button>*/}
               {/*</div>*/}
-              <Link className={"btn btn-info ml-2"}
+              <Link className={"btn btn-info m-2"}
                     onClick={() => props.onDetails(product.id)}
                     to={"/products/" + product.id}>
                 Details
               </Link>
-              <div className={classes.cart}>
-                <button className={classes.button2}>Add to cart!</button>
-              </div>
+              <Link className={"btn btn-success m-2"}
+                    onClick={() => props.onAddToCart(product.id)}
+                    to={"/shoppingCart/add-product/" + 1}>
+                Add to cart!
+              </Link>
               <div>
-                <Link className={"btn btn-secondary ml-2"}
+                <Link className={"btn btn-secondary m-2"}
                       onClick={() => props.onEdit(product.id)}
                       to={"/products/edit/" + product.id}>
                   Edit

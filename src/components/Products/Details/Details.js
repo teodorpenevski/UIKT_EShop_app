@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import React from "react";
 
 const Details =(props)=>{
 
@@ -19,7 +20,7 @@ const Details =(props)=>{
                              return item.name
                             })}
                         </h2>
-                        <Link className={"btn m-2 btn-primary"} to={"/shoppingcart"}>Add to cart</Link>
+                        <Link className={"btn m-2 btn-primary"} to={"/home"}>Cancel</Link>
                     </div>
                 </div>
             }

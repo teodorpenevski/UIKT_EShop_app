@@ -22,6 +22,7 @@ class App extends Component {
       products: [],
       categories: [],
       selectedProduct: {},
+      shoppingCart: {}
     };
   }
 
@@ -107,10 +108,19 @@ class App extends Component {
                   <ShoppingCart/>
               )}
           />
+
+          <Route
+              path="/shoppingCart/add-product/:id"
+              exact
+              render={() => (
+                  <ShoppingCart/>
+              )}
+          />
           <Route
             exact
             path="/home"
             render={() => <Home products={this.state.products}
+                                onAddToCart={this.addProductToCart}
                                 onEdit={this.getProduct}
                                 onDetails={this.getProduct}
             />}
@@ -253,6 +263,12 @@ class App extends Component {
 
   editProduct = (id, price) => {
     EShopService.editProduct(id, price).then(() => {
+      this.loadProducts();
+    });
+  };
+
+  addProductToCart = (productId) => {
+    EShopService.addToCart(productId).then(() => {
       this.loadProducts();
     });
   };

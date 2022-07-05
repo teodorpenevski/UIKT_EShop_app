@@ -71,6 +71,11 @@ const EShopService = {
     },
     deleteShoppingCartItem: (id) => {
         return axios.delete(`/shoppingCart/delete/${id}`)
+    },
+    addToCart: (productId) => {
+        return axios.post("/shoppingCart/add-product/1", {
+            "productId" : productId
+        })
     }
 }
 

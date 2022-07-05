@@ -12,7 +12,7 @@ const Header = () => {
         </Link>
       </div>
       <div className={classes.rightItem}>
-        <Link to="/cart">
+        <Link to="/shoppingCart/1">
           <div className={classes.iconsCart}>
             <TiShoppingCart />
           </div>
